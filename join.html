@@ -69,6 +69,7 @@
           <input type="hidden" name="_template" value="table">
           <input type="hidden" name="_captcha" value="true">
           <input type="hidden" name="_next" value="https://korea2045.vercel.app/join.html?submitted=1#founder">
+          <input type="hidden" name="_autoresponse" value="광복100년 국민동행 국민발기인 신청이 접수되었습니다. 감사합니다.">
           <div>
             <label class="block text-sm font-semibold text-zinc-700 mb-2"><iconify-icon icon="solar:user-bold" width="14" class="text-tg-red mr-1"></iconify-icon>이름 <span class="text-tg-red">*</span></label>
             <input type="text" name="이름" required placeholder="홍길동" class="w-full px-4 py-3 rounded-xl border border-zinc-200 bg-cream-50 text-zinc-900 placeholder:text-zinc-300 focus:outline-none focus:ring-2 focus:ring-tg-red/30 focus:border-tg-red/50 transition-all">
@@ -167,11 +168,37 @@
 })();
 </script>
 <script>
+// 리다이렉트 복귀 시 성공 표시
 if(location.search.includes('submitted=1')){
   document.getElementById('founderForm').classList.add('hidden');
   document.getElementById('submitSuccess').classList.remove('hidden');
   document.getElementById('founder').scrollIntoView({behavior:'smooth'});
 }
+// AJAX 제출 (페이지 이동 없음)
+document.getElementById('founderForm').addEventListener('submit',function(e){
+  e.preventDefault();
+  const form=this;
+  const btn=form.querySelector('button[type="submit"]');
+  btn.disabled=true;
+  btn.innerHTML='<iconify-icon icon="solar:refresh-bold" width="20" class="animate-spin"></iconify-icon> 제출 중...';
+  fetch(form.action,{method:'POST',body:new FormData(form),headers:{'Accept':'application/json'}})
+  .then(r=>{
+    if(r.ok){
+      form.classList.add('hidden');
+      document.getElementById('submitSuccess').classList.remove('hidden');
+      document.getElementById('founder').scrollIntoView({behavior:'smooth'});
+    } else {
+      btn.disabled=false;
+      btn.innerHTML='국민발기인 신청하기 <span class="w-8 h-8 rounded-full bg-white/15 flex items-center justify-center"><iconify-icon icon="solar:arrow-right-linear" width="16"></iconify-icon></span>';
+      alert('전송에 실패했습니다. 다시 시도해 주세요.');
+    }
+  })
+  .catch(()=>{
+    btn.disabled=false;
+    btn.innerHTML='국민발기인 신청하기 <span class="w-8 h-8 rounded-full bg-white/15 flex items-center justify-center"><iconify-icon icon="solar:arrow-right-linear" width="16"></iconify-icon></span>';
+    alert('네트워크 오류가 발생했습니다. 다시 시도해 주세요.');
+  });
+});
 </script>
 </body>
 </html>
