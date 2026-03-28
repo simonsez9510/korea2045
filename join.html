@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>참여·문의 — 광복100년 국민동행</title>
+  <meta name="description" content="광복100년 국민동행에 참여하세요. 국민발기인 신청, 캠페인 참여, 후원 안내.">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="참여·문의 — 광복100년 국민동행">
+  <meta property="og:description" content="당신의 참여가 대한민국 100년의 미래가 됩니다. 국민발기인 신청, 후원 안내.">
+  <meta property="og:url" content="https://korea2045.vercel.app/join.html">
+  <meta property="og:locale" content="ko_KR">
+  <meta property="og:site_name" content="광복100년 국민동행">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.min.css">
+  <script src="https://code.iconify.design/iconify-icon/2.3.0/iconify-icon.min.js"></script>
+  <script>tailwind.config={theme:{extend:{fontFamily:{sans:['Pretendard','system-ui','sans-serif']},colors:{gold:{50:'#FBF8F0',100:'#F5EDDA',200:'#EBDAB5',300:'#CEA964',500:'#96782E'},cream:{50:'#FDFBF7',100:'#FAF7F0'},tg:{red:'#C8102E',blue:'#003478',redLight:'#FDE8EC',blueLight:'#E8EEF7'}}}}}</script>
+  <style>
+    @keyframes fadeInUp{from{opacity:0;transform:translateY(2rem)}to{opacity:1;transform:translateY(0)}}
+    .anim{animation:fadeInUp .9s cubic-bezier(.16,1,.3,1) forwards;opacity:0}
+    .glass{backdrop-filter:blur(16px) saturate(180%);-webkit-backdrop-filter:blur(16px) saturate(180%)}
+    .noise{position:fixed;inset:0;z-index:60;pointer-events:none;opacity:.02;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
+    *{word-break:keep-all}
+    .card{background:#fff;border:1px solid rgba(0,0,0,.06);border-radius:1.5rem;box-shadow:0 4px 24px -8px rgba(0,0,0,.04)}
+  </style>
+</head>
+<body class="bg-cream-50 text-zinc-900 font-sans antialiased overflow-x-hidden">
+<div class="noise"></div>
+<nav class="fixed top-4 left-1/2 -translate-x-1/2 z-40 w-[calc(100%-2rem)] max-w-3xl"><div class="glass bg-white/80 border border-zinc-200/50 rounded-full px-6 py-3 flex items-center justify-between shadow-[0_8px_32px_-8px_rgba(0,0,0,.06)]"><a href="index.html" class="font-bold text-lg tracking-tight">광복100년 <span class="text-gold-500">국민동행</span></a><div class="hidden md:flex items-center gap-5 text-sm font-medium text-zinc-500"><a href="index.html" class="hover:text-zinc-900 transition-colors">홈</a><a href="proposal.html" class="hover:text-zinc-900 transition-colors">제안사</a><a href="proposers.html" class="hover:text-zinc-900 transition-colors">제안자</a><a href="archive.html" class="hover:text-zinc-900 transition-colors">자료실</a><a href="join.html" class="text-zinc-900">참여·문의</a></div><a href="#founder" class="bg-tg-red text-white text-sm font-bold px-5 py-2 rounded-full hover:scale-[1.02] active:scale-[0.98] transition-all flex items-center gap-2">참여하기 <span class="w-5 h-5 rounded-full bg-white/20 flex items-center justify-center"><iconify-icon icon="solar:arrow-right-linear" width="12"></iconify-icon></span></a></div></nav>
+
+<section class="pt-32 pb-16 md:pt-40 md:pb-24 relative text-center"><div class="absolute inset-0"><div class="absolute top-1/3 left-1/3 w-[400px] h-[400px] bg-tg-red/4 rounded-full blur-[120px]"></div></div><div class="max-w-7xl mx-auto px-4 space-y-6 relative"><span class="inline-flex items-center gap-2 bg-white border border-zinc-200 text-zinc-600 text-sm font-semibold px-5 py-2 rounded-full shadow-sm"><iconify-icon icon="solar:hand-stars-bold" width="16" class="text-tg-red"></iconify-icon>Join Us</span><h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight">참여·문의</h1><p class="text-lg text-zinc-500 max-w-[50ch] mx-auto">당신의 참여가 대한민국 100년의 미래가 됩니다.</p></div></section>
+
+<!-- 국민발기인 -->
+<section id="founder" class="py-20 md:py-28">
+  <div class="max-w-4xl mx-auto px-4">
+    <div class="card border-t-4 border-t-tg-red/60">
+      <div class="p-8 md:p-12 text-center space-y-6">
+        <span class="text-xs font-bold text-tg-red bg-tg-redLight px-3 py-1 rounded-full">메인 모집</span>
+        <h2 class="text-3xl md:text-4xl font-extrabold tracking-tight">국민발기인 신청</h2>
+        <p class="text-zinc-500 text-lg max-w-[48ch] mx-auto">사단법인 설립을 위한 국민발기인을 모집합니다. 포용과 공존의 대한민국을 함께 만들어 주세요.</p>
+        <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 max-w-lg mx-auto pt-4">
+          <div class="flex items-center gap-2 text-sm text-zinc-500 justify-center"><iconify-icon icon="solar:user-bold" width="16" class="text-tg-red"></iconify-icon>이름</div>
+          <div class="flex items-center gap-2 text-sm text-zinc-500 justify-center"><iconify-icon icon="solar:buildings-bold" width="16" class="text-tg-red"></iconify-icon>소속</div>
+          <div class="flex items-center gap-2 text-sm text-zinc-500 justify-center"><iconify-icon icon="solar:letter-bold" width="16" class="text-tg-red"></iconify-icon>이메일</div>
+        </div>
+        <a href="#" class="group inline-flex items-center gap-3 bg-zinc-900 text-white font-bold px-10 py-5 rounded-full text-lg hover:scale-[1.02] active:scale-[0.98] transition-all shadow-[0_8px_24px_-4px_rgba(0,0,0,.15)]">
+          국민발기인 신청하기 <span class="w-8 h-8 rounded-full bg-white/15 flex items-center justify-center group-hover:translate-x-1 transition-transform"><iconify-icon icon="solar:arrow-right-linear" width="16"></iconify-icon></span>
+        </a>
+        <p class="text-xs text-zinc-400">구글 폼으로 연결됩니다</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 캠페인 -->
+<section class="py-20 md:py-28 bg-white border-y border-zinc-100">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="grid grid-cols-1 md:grid-cols-12 gap-8 items-center">
+      <div class="md:col-span-5">
+        <div class="w-14 h-14 rounded-2xl bg-emerald-50 border border-emerald-100 flex items-center justify-center mb-6"><iconify-icon icon="solar:heart-bold" width="28" class="text-emerald-500"></iconify-icon></div>
+        <h2 class="text-3xl md:text-4xl font-bold tracking-tight leading-tight mb-4">공존과 연대 캠페인</h2>
+        <p class="text-zinc-500 text-lg leading-relaxed">혐오와 배제의 언어를 거두고, 포용과 절제를 사회 생활 규범으로 정착시키는 캠페인에 동참해 주세요.</p>
+      </div>
+      <div class="md:col-span-7">
+        <div class="card"><div class="p-8 space-y-4">
+          <h3 class="text-xl font-bold">포용과 절제 실천 캠페인</h3>
+          <p class="text-zinc-500 leading-relaxed">일상에서 포용과 절제를 실천하겠다는 약속. 작은 실천이 대한민국의 내일을 바꿉니다.</p>
+          <a href="#" class="inline-flex items-center gap-2 bg-emerald-50 border border-emerald-200 text-emerald-600 font-semibold px-6 py-3 rounded-full text-sm hover:bg-emerald-100 transition-colors"><iconify-icon icon="solar:hand-shake-bold" width="16"></iconify-icon>캠페인 참여 신청</a>
+        </div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 후원 -->
+<section class="py-20 md:py-28">
+  <div class="max-w-4xl mx-auto px-4">
+    <div class="card border-t-4 border-t-gold-300/60">
+      <div class="p-8 md:p-12 text-center space-y-6">
+        <div class="w-14 h-14 rounded-2xl bg-gold-100 border border-gold-200 flex items-center justify-center mx-auto"><iconify-icon icon="solar:wallet-bold" width="28" class="text-gold-500"></iconify-icon></div>
+        <h2 class="text-3xl md:text-4xl font-extrabold tracking-tight">후원 안내</h2>
+        <p class="text-zinc-500 text-lg max-w-[45ch] mx-auto">광복100년 국민동행의 설립과 활동을 후원해 주세요.</p>
+        <div class="bg-cream-100 border border-zinc-200 rounded-2xl p-6 max-w-md mx-auto">
+          <p class="text-sm text-zinc-400 mb-2">후원 계좌</p>
+          <p class="text-xl font-bold text-tg-red">KB국민 441501-01-512368</p>
+          <p class="text-sm text-zinc-500 mt-1">이부영 (광복백년 국민동행)</p>
+        </div>
+        <p class="text-sm text-zinc-400">후원 문의: <a href="mailto:info@korea2045.org" class="text-tg-blue hover:underline">info@korea2045.org</a></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 문의 -->
+<section class="py-20 md:py-28 bg-white border-y border-zinc-100">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center mb-12"><div class="flex items-center justify-center gap-2"><div class="h-0.5 w-8 bg-tg-red/40 rounded-full"></div><span class="text-zinc-400 text-sm font-semibold tracking-widest uppercase">Contact</span><div class="h-0.5 w-8 bg-tg-blue/40 rounded-full"></div></div><h2 class="text-3xl md:text-4xl font-bold tracking-tight mt-4">문의</h2></div>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+      <div class="card text-center"><div class="p-8"><div class="w-12 h-12 rounded-xl bg-tg-redLight flex items-center justify-center mx-auto mb-4"><iconify-icon icon="solar:letter-bold" width="24" class="text-tg-red"></iconify-icon></div><p class="font-bold mb-2">이메일</p><a href="mailto:info@korea2045.org" class="text-tg-blue text-sm hover:underline">info@korea2045.org</a></div></div>
+      <div class="card text-center"><div class="p-8"><div class="w-12 h-12 rounded-xl bg-tg-blueLight flex items-center justify-center mx-auto mb-4"><iconify-icon icon="solar:map-point-bold" width="24" class="text-tg-blue"></iconify-icon></div><p class="font-bold mb-2">사무소</p><p class="text-zinc-500 text-sm">서울 서대문구 서소문로 45<br>SK리쳄블 509호</p></div></div>
+      <div class="card text-center"><div class="p-8"><div class="w-12 h-12 rounded-xl bg-gold-100 flex items-center justify-center mx-auto mb-4"><iconify-icon icon="solar:chat-round-dots-bold" width="24" class="text-gold-500"></iconify-icon></div><p class="font-bold mb-2">문의 사유</p><div class="flex flex-wrap gap-2 justify-center mt-3"><span class="text-xs bg-cream-100 border border-zinc-200 px-3 py-1 rounded-full text-zinc-500">언론</span><span class="text-xs bg-cream-100 border border-zinc-200 px-3 py-1 rounded-full text-zinc-500">후원</span><span class="text-xs bg-cream-100 border border-zinc-200 px-3 py-1 rounded-full text-zinc-500">개인참여</span><span class="text-xs bg-cream-100 border border-zinc-200 px-3 py-1 rounded-full text-zinc-500">기타</span></div></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- SNS -->
+<section class="py-20 md:py-28">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center mb-12"><span class="text-gold-500 text-sm font-semibold tracking-widest uppercase">Social</span><h2 class="text-3xl md:text-4xl font-bold tracking-tight mt-4">SNS 채널</h2></div>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+      <a href="#" class="group card hover:shadow-[0_8px_32px_-8px_rgba(0,0,0,.08)] transition-all text-center"><div class="p-8"><div class="w-14 h-14 rounded-2xl bg-red-50 flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform"><iconify-icon icon="solar:play-bold" width="28" class="text-red-500"></iconify-icon></div><p class="font-bold text-lg">YouTube</p><p class="text-tg-red text-sm mt-1">@korea2045</p><span class="inline-flex items-center gap-1 text-xs text-zinc-400 mt-3">바로가기 <iconify-icon icon="solar:arrow-right-up-linear" width="12"></iconify-icon></span></div></a>
+      <a href="#" class="group card hover:shadow-[0_8px_32px_-8px_rgba(0,0,0,.08)] transition-all text-center"><div class="p-8"><div class="w-14 h-14 rounded-2xl bg-pink-50 flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform"><iconify-icon icon="solar:camera-bold" width="28" class="text-pink-500"></iconify-icon></div><p class="font-bold text-lg">Instagram</p><p class="text-tg-red text-sm mt-1">@korea2045</p><span class="inline-flex items-center gap-1 text-xs text-zinc-400 mt-3">바로가기 <iconify-icon icon="solar:arrow-right-up-linear" width="12"></iconify-icon></span></div></a>
+      <a href="#" class="group card hover:shadow-[0_8px_32px_-8px_rgba(0,0,0,.08)] transition-all text-center"><div class="p-8"><div class="w-14 h-14 rounded-2xl bg-blue-50 flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform"><iconify-icon icon="mdi:facebook" width="28" class="text-blue-600"></iconify-icon></div><p class="font-bold text-lg">Facebook</p><p class="text-tg-blue text-sm mt-1">@korea2045</p><span class="inline-flex items-center gap-1 text-xs text-zinc-400 mt-3">바로가기 <iconify-icon icon="solar:arrow-right-up-linear" width="12"></iconify-icon></span></div></a>
+    </div>
+  </div>
+</section>
+
+<footer class="py-12 border-t border-zinc-100 bg-white"><div class="max-w-7xl mx-auto px-4"><div class="flex flex-col md:flex-row items-center justify-between gap-6"><div><span class="font-bold">광복100년 <span class="text-gold-500">국민동행</span></span><p class="text-xs text-zinc-400 mt-1">서울 서대문구 서소문로 45 SK리쳄블 509호</p></div><div class="flex items-center gap-6 text-sm text-zinc-400"><a href="proposal.html" class="hover:text-zinc-900 transition-colors">제안사</a><a href="proposers.html" class="hover:text-zinc-900 transition-colors">제안자</a><a href="archive.html" class="hover:text-zinc-900 transition-colors">자료실</a><a href="join.html" class="hover:text-zinc-900 transition-colors">참여·문의</a></div><span class="text-xs text-zinc-300">&copy; 2026 korea2045.org</span></div></div></footer>
+
+<script>const obs=new IntersectionObserver(e=>{e.forEach(el=>{if(el.isIntersecting){el.target.classList.add('anim');obs.unobserve(el.target)}})},{threshold:.1});document.querySelectorAll('.card').forEach(el=>{el.style.opacity='0';obs.observe(el)});</script>
+</body>
+</html>
