@@ -56,21 +56,51 @@
 
 <!-- 국민발기인 -->
 <section id="founder" class="py-20 md:py-28">
-  <div class="max-w-4xl mx-auto px-4">
+  <div class="max-w-2xl mx-auto px-4">
     <div class="card border-t-4 border-t-tg-red/60">
-      <div class="p-8 md:p-12 text-center space-y-6">
-        <span class="text-xs font-bold text-tg-red bg-tg-redLight px-3 py-1 rounded-full">메인 모집</span>
-        <h2 class="text-3xl md:text-4xl font-extrabold tracking-tight">국민발기인 신청</h2>
-        <p class="text-zinc-500 text-lg max-w-[48ch] mx-auto">사단법인 설립을 위한 국민발기인을 모집합니다. 포용과 공존의 대한민국을 함께 만들어 주세요.</p>
-        <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 max-w-lg mx-auto pt-4">
-          <div class="flex items-center gap-2 text-sm text-zinc-500 justify-center"><iconify-icon icon="solar:user-bold" width="16" class="text-tg-red"></iconify-icon>이름</div>
-          <div class="flex items-center gap-2 text-sm text-zinc-500 justify-center"><iconify-icon icon="solar:buildings-bold" width="16" class="text-tg-red"></iconify-icon>소속</div>
-          <div class="flex items-center gap-2 text-sm text-zinc-500 justify-center"><iconify-icon icon="solar:letter-bold" width="16" class="text-tg-red"></iconify-icon>이메일</div>
+      <div class="p-8 md:p-12 space-y-8">
+        <div class="text-center space-y-4">
+          <span class="text-xs font-bold text-tg-red bg-tg-redLight px-3 py-1 rounded-full">메인 모집</span>
+          <h2 class="text-3xl md:text-4xl font-extrabold tracking-tight">국민발기인 신청</h2>
+          <p class="text-zinc-500 text-lg max-w-[48ch] mx-auto">사단법인 설립을 위한 국민발기인을 모집합니다. 포용과 공존의 대한민국을 함께 만들어 주세요.</p>
         </div>
-        <a href="#" class="group inline-flex items-center gap-3 bg-zinc-900 text-white font-bold px-10 py-5 rounded-full text-lg hover:scale-[1.02] active:scale-[0.98] transition-all shadow-[0_8px_24px_-4px_rgba(0,0,0,.15)]">
-          국민발기인 신청하기 <span class="w-8 h-8 rounded-full bg-white/15 flex items-center justify-center group-hover:translate-x-1 transition-transform"><iconify-icon icon="solar:arrow-right-linear" width="16"></iconify-icon></span>
-        </a>
-        <p class="text-xs text-zinc-400">구글 폼으로 연결됩니다</p>
+        <form id="founderForm" action="https://formsubmit.co/info@korea2045.org" method="POST" class="space-y-5">
+          <input type="hidden" name="_subject" value="[국민발기인 신청] 새로운 신청이 접수되었습니다">
+          <input type="hidden" name="_template" value="table">
+          <input type="hidden" name="_captcha" value="true">
+          <input type="hidden" name="_next" value="https://korea2045.vercel.app/join.html?submitted=1#founder">
+          <div>
+            <label class="block text-sm font-semibold text-zinc-700 mb-2"><iconify-icon icon="solar:user-bold" width="14" class="text-tg-red mr-1"></iconify-icon>이름 <span class="text-tg-red">*</span></label>
+            <input type="text" name="이름" required placeholder="홍길동" class="w-full px-4 py-3 rounded-xl border border-zinc-200 bg-cream-50 text-zinc-900 placeholder:text-zinc-300 focus:outline-none focus:ring-2 focus:ring-tg-red/30 focus:border-tg-red/50 transition-all">
+          </div>
+          <div>
+            <label class="block text-sm font-semibold text-zinc-700 mb-2"><iconify-icon icon="solar:buildings-bold" width="14" class="text-tg-red mr-1"></iconify-icon>소속</label>
+            <input type="text" name="소속" placeholder="직장, 단체 등 (선택)" class="w-full px-4 py-3 rounded-xl border border-zinc-200 bg-cream-50 text-zinc-900 placeholder:text-zinc-300 focus:outline-none focus:ring-2 focus:ring-tg-red/30 focus:border-tg-red/50 transition-all">
+          </div>
+          <div>
+            <label class="block text-sm font-semibold text-zinc-700 mb-2"><iconify-icon icon="solar:phone-bold" width="14" class="text-tg-red mr-1"></iconify-icon>연락처 <span class="text-tg-red">*</span></label>
+            <input type="tel" name="연락처" required placeholder="010-0000-0000" class="w-full px-4 py-3 rounded-xl border border-zinc-200 bg-cream-50 text-zinc-900 placeholder:text-zinc-300 focus:outline-none focus:ring-2 focus:ring-tg-red/30 focus:border-tg-red/50 transition-all">
+          </div>
+          <div>
+            <label class="block text-sm font-semibold text-zinc-700 mb-2"><iconify-icon icon="solar:letter-bold" width="14" class="text-tg-red mr-1"></iconify-icon>이메일</label>
+            <input type="email" name="이메일" placeholder="example@email.com (선택)" class="w-full px-4 py-3 rounded-xl border border-zinc-200 bg-cream-50 text-zinc-900 placeholder:text-zinc-300 focus:outline-none focus:ring-2 focus:ring-tg-red/30 focus:border-tg-red/50 transition-all">
+          </div>
+          <div>
+            <label class="flex items-start gap-2 cursor-pointer">
+              <input type="checkbox" name="개인정보동의" value="동의" required class="mt-1 w-4 h-4 accent-[#C8102E] rounded">
+              <span class="text-sm text-zinc-500"><a href="privacy.html" target="_blank" class="text-tg-blue hover:underline">개인정보처리방침</a>에 동의합니다. <span class="text-tg-red">*</span></span>
+            </label>
+          </div>
+          <button type="submit" class="group w-full inline-flex items-center justify-center gap-3 bg-zinc-900 text-white font-bold px-10 py-4 rounded-full text-lg hover:scale-[1.01] active:scale-[0.99] transition-all shadow-[0_8px_24px_-4px_rgba(0,0,0,.15)]">
+            국민발기인 신청하기 <span class="w-8 h-8 rounded-full bg-white/15 flex items-center justify-center group-hover:translate-x-1 transition-transform"><iconify-icon icon="solar:arrow-right-linear" width="16"></iconify-icon></span>
+          </button>
+          <p class="text-xs text-zinc-400 text-center">제출 후 확인 이메일이 발송됩니다.</p>
+        </form>
+        <div id="submitSuccess" class="hidden text-center space-y-4 py-8">
+          <div class="w-16 h-16 rounded-full bg-emerald-50 flex items-center justify-center mx-auto"><iconify-icon icon="solar:check-circle-bold" width="36" class="text-emerald-500"></iconify-icon></div>
+          <h3 class="text-2xl font-bold">신청이 완료되었습니다</h3>
+          <p class="text-zinc-500">국민발기인으로 신청해 주셔서 감사합니다.<br>확인 후 연락드리겠습니다.</p>
+        </div>
       </div>
     </div>
   </div>
@@ -135,6 +165,13 @@
   closeBtn.addEventListener('click',closeMenu);
   backdrop.addEventListener('click',closeMenu);
 })();
+</script>
+<script>
+if(location.search.includes('submitted=1')){
+  document.getElementById('founderForm').classList.add('hidden');
+  document.getElementById('submitSuccess').classList.remove('hidden');
+  document.getElementById('founder').scrollIntoView({behavior:'smooth'});
+}
 </script>
 </body>
 </html>
