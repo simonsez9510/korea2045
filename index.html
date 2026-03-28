@@ -62,11 +62,39 @@
       <a href="archive.html" class="hover:text-zinc-900 transition-colors">자료실</a>
       <a href="join.html" class="hover:text-zinc-900 transition-colors">참여·문의</a>
     </div>
-    <a href="join.html" class="bg-tg-red text-white text-sm font-bold px-5 py-2 rounded-full hover:scale-[1.02] active:scale-[0.98] transition-all duration-300 flex items-center gap-2">
-      참여하기 <span class="w-5 h-5 rounded-full bg-white/20 flex items-center justify-center"><iconify-icon icon="solar:arrow-right-linear" width="12"></iconify-icon></span>
-    </a>
+    <div class="flex items-center gap-3">
+      <a href="join.html" class="bg-tg-red text-white text-sm font-bold px-5 py-2 rounded-full hover:scale-[1.02] active:scale-[0.98] transition-all duration-300 flex items-center gap-2">
+        참여하기 <span class="w-5 h-5 rounded-full bg-white/20 flex items-center justify-center"><iconify-icon icon="solar:arrow-right-linear" width="12"></iconify-icon></span>
+      </a>
+      <button id="menuOpen" class="md:hidden w-9 h-9 flex items-center justify-center rounded-full hover:bg-zinc-100 transition-colors" aria-label="메뉴 열기">
+        <iconify-icon icon="solar:hamburger-menu-linear" width="22" class="text-zinc-700"></iconify-icon>
+      </button>
+    </div>
   </div>
 </nav>
+
+<!-- Mobile Menu Overlay -->
+<div id="mobileMenu" class="fixed inset-0 z-50 pointer-events-none opacity-0 transition-opacity duration-300 md:hidden">
+  <div class="absolute inset-0 bg-black/40" id="menuBackdrop"></div>
+  <div id="menuPanel" class="absolute top-0 right-0 w-[280px] h-full glass bg-white/90 border-l border-zinc-200/50 shadow-[-8px_0_32px_rgba(0,0,0,.08)] translate-x-full transition-transform duration-300 ease-[cubic-bezier(.16,1,.3,1)]">
+    <div class="flex items-center justify-between px-6 py-5 border-b border-zinc-100">
+      <span class="font-bold text-lg tracking-tight">광복100년 <span class="text-gold-500">국민동행</span></span>
+      <button id="menuClose" class="w-9 h-9 flex items-center justify-center rounded-full hover:bg-zinc-100 transition-colors" aria-label="메뉴 닫기">
+        <iconify-icon icon="solar:close-circle-linear" width="24" class="text-zinc-500"></iconify-icon>
+      </button>
+    </div>
+    <nav class="px-6 py-6 space-y-1">
+      <a href="index.html" class="flex items-center gap-3 px-4 py-3 rounded-xl text-zinc-900 bg-zinc-100 font-semibold transition-colors"><iconify-icon icon="solar:home-2-bold" width="20" class="text-tg-red"></iconify-icon>홈</a>
+      <a href="proposal.html" class="flex items-center gap-3 px-4 py-3 rounded-xl text-zinc-600 hover:bg-zinc-50 hover:text-zinc-900 transition-colors"><iconify-icon icon="solar:document-text-bold" width="20" class="text-zinc-400"></iconify-icon>제안사</a>
+      <a href="proposers.html" class="flex items-center gap-3 px-4 py-3 rounded-xl text-zinc-600 hover:bg-zinc-50 hover:text-zinc-900 transition-colors"><iconify-icon icon="solar:people-nearby-bold" width="20" class="text-zinc-400"></iconify-icon>제안자</a>
+      <a href="archive.html" class="flex items-center gap-3 px-4 py-3 rounded-xl text-zinc-600 hover:bg-zinc-50 hover:text-zinc-900 transition-colors"><iconify-icon icon="solar:library-bold" width="20" class="text-zinc-400"></iconify-icon>자료실</a>
+      <a href="join.html" class="flex items-center gap-3 px-4 py-3 rounded-xl text-zinc-600 hover:bg-zinc-50 hover:text-zinc-900 transition-colors"><iconify-icon icon="solar:hand-stars-bold" width="20" class="text-zinc-400"></iconify-icon>참여·문의</a>
+    </nav>
+    <div class="px-6 mt-2">
+      <a href="join.html" class="flex items-center justify-center gap-2 w-full bg-tg-red text-white font-bold py-3 rounded-full hover:scale-[1.02] active:scale-[0.98] transition-all">참여하기 <iconify-icon icon="solar:arrow-right-linear" width="14"></iconify-icon></a>
+    </div>
+  </div>
+</div>
 
 <!-- HERO -->
 <section class="min-h-[100dvh] relative flex items-center justify-center overflow-hidden">
@@ -300,8 +328,8 @@
         <a href="join.html" class="hover:text-zinc-900 transition-colors">참여·문의</a>
       </div>
       <div class="flex items-center gap-4 text-zinc-300">
-        <a href="#" class="hover:text-zinc-900 transition-colors"><iconify-icon icon="solar:play-bold" width="18"></iconify-icon></a>
-        <a href="#" class="hover:text-zinc-900 transition-colors"><iconify-icon icon="solar:camera-bold" width="18"></iconify-icon></a>
+        <a href="privacy.html" class="text-xs text-zinc-400 hover:text-zinc-900 transition-colors">개인정보처리방침</a>
+        <span class="text-zinc-200">|</span>
         <span class="text-xs">&copy; 2026 korea2045.org</span>
       </div>
     </div>
@@ -311,6 +339,20 @@
 <script>
 const obs=new IntersectionObserver(e=>{e.forEach(el=>{if(el.isIntersecting){el.target.classList.add('anim');obs.unobserve(el.target)}})},{threshold:.1});
 document.querySelectorAll('.card').forEach(el=>{el.style.opacity='0';obs.observe(el)});
+</script>
+<script>
+(function(){
+  const menu=document.getElementById('mobileMenu');
+  const panel=document.getElementById('menuPanel');
+  const backdrop=document.getElementById('menuBackdrop');
+  const openBtn=document.getElementById('menuOpen');
+  const closeBtn=document.getElementById('menuClose');
+  function openMenu(){menu.classList.remove('pointer-events-none','opacity-0');panel.classList.remove('translate-x-full');document.body.style.overflow='hidden';}
+  function closeMenu(){panel.classList.add('translate-x-full');menu.classList.add('opacity-0');setTimeout(()=>{menu.classList.add('pointer-events-none');document.body.style.overflow='';},300);}
+  openBtn.addEventListener('click',openMenu);
+  closeBtn.addEventListener('click',closeMenu);
+  backdrop.addEventListener('click',closeMenu);
+})();
 </script>
 </body>
 </html>
